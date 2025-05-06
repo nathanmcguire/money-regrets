@@ -1,6 +1,6 @@
 from sqlmodel import SQLModel, Field
 from uuid import UUID
-from ulid import ULID  # Use ULID for generating unique identifiers
+from ulid import ULID
 from typing import Optional
 from passlib.context import CryptContext
 
@@ -9,12 +9,12 @@ pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
 
 
 class User(SQLModel, table=True):
-    id: UUID = Field(default_factory=lambda: ULID().to_uuid(), primary_key=True)  # Use ULID as the primary key
+    uuid: UUID = Field(default_factory=lambda: ULID().to_uuid(), primary_key=True)  # Use ULID as the primary key
     name: str
     email: str
     password: str
-    is_archived: bool = Field(default=False)  # Add a field to track archiving
-    is_deleted: bool = Field(default=False)  # Add a field to track soft deletion
+    is_archived: bool = Field(default=False)
+    is_deleted: bool = Field(default=False)
 
     @classmethod
     def set_password(self, plaintext_password: str):
@@ -69,37 +69,6 @@ class User(SQLModel, table=True):
             session.refresh(user)
         return user
 
-    @classmethod
-    def archive(cls, session, user_id: UUID):
-        """Marks the user as archived."""
-        user = session.get(cls, user_id)
-        if user:
-            user.is_archived = True
-            session.commit()
-            session.refresh(user)
-        return user
-
-    @classmethod
-    def restore(cls, session, user_id: UUID):
-        """Restores the user by unarchiving and undeleting them."""
-        user = session.get(cls, user_id)
-        if user:
-            user.is_archived = False
-            user.is_deleted = False
-            session.commit()
-            session.refresh(user)
-        return user
-
-    @classmethod
-    def reactivate(cls, session, user_id: UUID):
-        """Reactivates a previously deleted user."""
-        user = session.get(cls, user_id)
-        if user and user.is_deleted:
-            user.is_deleted = False
-            session.commit()
-            session.refresh(user)
-        return user
-
 
 class UserCreate(SQLModel):
     name: str
@@ -108,16 +77,20 @@ class UserCreate(SQLModel):
 
 
 class UserRead(SQLModel):
-    id: UUID
+    uuid: UUID
     name: str
     email: str
+    is_archived: bool
+    is_deleted: bool
 
 
 class UserUpdate(SQLModel):
     name: Optional[str] = None
     email: Optional[str] = None
     password: Optional[str] = None
+    is_archived: bool
+    is_deleted: bool
 
 
 class UserDelete(SQLModel):
-    id: UUID
+    uuid: UUID

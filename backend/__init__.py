@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import os
 
-from backend.routers import router as api_router
+from backend.controllers import router as api_router
 
 
 # Initialize FastAPI app
