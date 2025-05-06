@@ -1,0 +1,15 @@
+alembic
+fastapi
+mkdocs
+mkdocs-material
+mkdocstrings
+mkdocstrings-python
+passlib
+plaid_python
+plantuml-markdown
+python-dotenv
+python-ulid
+sqlmodel
+typing
+uuid
+uvicorn

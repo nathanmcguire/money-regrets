@@ -1,0 +1,123 @@
+from sqlmodel import SQLModel, Field
+from uuid import UUID
+from ulid import ULID  # Use ULID for generating unique identifiers
+from typing import Optional
+from passlib.context import CryptContext
+
+# Initialize Passlib context for hashing
+pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
+
+
+class User(SQLModel, table=True):
+    id: UUID = Field(default_factory=lambda: ULID().to_uuid(), primary_key=True)  # Use ULID as the primary key
+    name: str
+    email: str
+    password: str
+    is_archived: bool = Field(default=False)  # Add a field to track archiving
+    is_deleted: bool = Field(default=False)  # Add a field to track soft deletion
+
+    @classmethod
+    def set_password(self, plaintext_password: str):
+        """Hashes the plaintext password and sets it to the password field."""
+        self.password = pwd_context.hash(plaintext_password)
+
+    @classmethod
+    def verify_password(self, plaintext_password: str) -> bool:
+        return pwd_context.verify(plaintext_password, self.password)
+
+    @classmethod
+    def create(cls, session, name: str, email: str, password: str):
+        user = cls(name=name, email=email, password=password)
+        session.add(user)
+        session.commit()
+        session.refresh(user)
+        return user
+
+    @classmethod
+    def read(cls, session, user_id: UUID):
+        return session.get(cls, user_id)
+
+    @classmethod
+    def update(cls, session, user_id: UUID, name: Optional[str] = None, email: Optional[str] = None, password: Optional[str] = None):
+        user = session.get(cls, user_id)
+        if user:
+            if name is not None:
+                user.name = name
+            if email is not None:
+                user.email = email
+            if password is not None:
+                user.hashed_password = password
+            session.commit()
+            session.refresh(user)
+        return user
+
+    @classmethod
+    def delete(cls, session, user_id: UUID):
+        user = session.get(cls, user_id)
+        if user:
+            session.delete(user)
+            session.commit()
+        return user
+
+    @classmethod
+    def soft_delete(cls, session, user_id: UUID):
+        """Marks the user as deleted without removing it from the database."""
+        user = session.get(cls, user_id)
+        if user:
+            user.is_deleted = True
+            session.commit()
+            session.refresh(user)
+        return user
+
+    @classmethod
+    def archive(cls, session, user_id: UUID):
+        """Marks the user as archived."""
+        user = session.get(cls, user_id)
+        if user:
+            user.is_archived = True
+            session.commit()
+            session.refresh(user)
+        return user
+
+    @classmethod
+    def restore(cls, session, user_id: UUID):
+        """Restores the user by unarchiving and undeleting them."""
+        user = session.get(cls, user_id)
+        if user:
+            user.is_archived = False
+            user.is_deleted = False
+            session.commit()
+            session.refresh(user)
+        return user
+
+    @classmethod
+    def reactivate(cls, session, user_id: UUID):
+        """Reactivates a previously deleted user."""
+        user = session.get(cls, user_id)
+        if user and user.is_deleted:
+            user.is_deleted = False
+            session.commit()
+            session.refresh(user)
+        return user
+
+
+class UserCreate(SQLModel):
+    name: str
+    email: str
+    password: str
+
+
+class UserRead(SQLModel):
+    id: UUID
+    name: str
+    email: str
+
+
+class UserUpdate(SQLModel):
+    name: Optional[str] = None
+    email: Optional[str] = None
+    password: Optional[str] = None
+
+
+class UserDelete(SQLModel):
+    id: UUID
