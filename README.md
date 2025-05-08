@@ -1,4 +1,4 @@
-# Money Regrets 💸
+# Welcome to Money Regrets 💸
 
 Welcome to **Money Regrets** – the personal finance app that doesn’t sugarcoat your spending habits. It’s not here to help you feel better. It’s here to hold up a mirror… and maybe laugh a little.
 

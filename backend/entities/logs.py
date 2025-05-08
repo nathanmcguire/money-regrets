@@ -3,7 +3,7 @@ from sqlmodel import Enum, Session, select
 from uuid import UUID
 from ulid import ULID
 from backend.database import get_session
-from backend.models.user import User
+from backend.models.users import User
 
 from typing import Optional, Dict, List
 from datetime import datetime

@@ -9,6 +9,8 @@ pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
 
 
 class User(SQLModel, table=True):
+    __tablename__ = "Users"  # Set the table name to "Users"
+    
     uuid: UUID = Field(default_factory=lambda: ULID().to_uuid(), primary_key=True)  # Use ULID as the primary key
     name: str
     email: str
@@ -71,9 +73,9 @@ class User(SQLModel, table=True):
 
 
 class UserCreate(SQLModel):
-    name: str
-    email: str
-    password: str
+    name: str = Field(default="John Doe")
+    email: str = Field(default="johndoe@example.com")
+    password: str = Field(default="$argon2id$v=19$m=65536,t=3,p=4$WzG6p+Y9A1aTkgWj1xKziQ$FhCbCMRK3S6kND7rOUPKD2P1VzV0jEjv0TP9k8rMg0I")
 
 
 class UserRead(SQLModel):

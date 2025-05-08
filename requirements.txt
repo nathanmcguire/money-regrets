@@ -1,5 +1,7 @@
 alembic
+black
 fastapi
+httpx
 mkdocs
 mkdocs-material
 mkdocstrings
@@ -7,8 +9,12 @@ mkdocstrings-python
 passlib
 plaid_python
 plantuml-markdown
+pytest
+pytest-asyncio
 python-dotenv
 python-ulid
+ruff
+slowapi
 sqlmodel
 typing
 uuid

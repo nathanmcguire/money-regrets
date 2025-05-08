@@ -1,1 +1,5 @@
-site_name: My Docs
+site_name: Money Regrets 💸
+theme:
+  name: material
+  custom_dir: docs/overrides
+  # - navigation.tabs

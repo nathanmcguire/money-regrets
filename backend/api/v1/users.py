@@ -1,17 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import Session, select
 from backend.database import get_session
-from backend.models.user import User, UserCreate, UserRead, UserUpdate, UserDelete
+from backend.entities.user import User, UserCreate, UserRead, UserUpdate, UserDelete
 from typing import Annotated
 from fastapi import Query
 
-router = APIRouter(prefix="/users", tags=["Users"])
-
-
+router = APIRouter()
 
 # Core CRUD operations for User model
-
-
 
 @router.get("/", response_model=list[UserRead])
 async def read_users(
@@ -95,6 +91,12 @@ async def read_users(
 
 @router.post("/", response_model=UserRead)
 def create_user(user: UserCreate, session: Session = Depends(get_session)):
+    """
+    Attributes:
+    - name (str): The full name of the user. Defaults to 'John Doe'.
+    - email (str): The email address of the user. Defaults to 'johndoe@example.com'.
+    - password (str): The user's password. This can either be in plaintext or in PHC (Password Hashing Competition) format. Defaults to a pre-defined Argon2id hash.
+    """
     session.add(user)
     session.commit()
     session.refresh(user)

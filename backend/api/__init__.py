@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from .api import app as api_app
+from .v1 import app as v1_app
 
 app = FastAPI(docs_url=None, redoc_url=None)
 
-app.mount("/api", api_app)
+app.mount("/v1", v1_app)

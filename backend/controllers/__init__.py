@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from backend.controllers.user import router as user_router
+from backend.api.v1.users import router as user_router
 
 # Create a main router to include all sub-routers
 router = APIRouter()
