@@ -1,6 +1,0 @@
-from fastapi import FastAPI
-from .api import app as api_app
-
-app = FastAPI(docs_url=None, redoc_url=None)
-
-app.mount("/api", api_app)
