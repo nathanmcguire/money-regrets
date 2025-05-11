@@ -1,6 +1,7 @@
 alembic
 black
 fastapi
+fastapi[standard]
 httpx
 mkdocs
 mkdocs-material

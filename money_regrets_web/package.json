@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && xcopy /E /I build ..\\money_regrets\\static",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

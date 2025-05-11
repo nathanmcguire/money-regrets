@@ -34,7 +34,8 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-from backend.models import *  # This imports all models from backend/models/__init__.py
+
+from money_regrets.entities import *
 target_metadata = SQLModel.metadata
 
 

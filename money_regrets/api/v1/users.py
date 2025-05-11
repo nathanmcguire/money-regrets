@@ -1,9 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import Session, select
-from backend.database import get_session
-from backend.entities.user import User, UserCreate, UserRead, UserUpdate, UserDelete
+from money_regrets.database import get_session
+from money_regrets.entities.users import User, UserCreate, UserRead, UserUpdate
 from typing import Annotated
 from fastapi import Query
+from uuid import UUID
 
 router = APIRouter()
 
@@ -90,56 +91,56 @@ async def read_users(
     return users
 
 @router.post("/", response_model=UserRead)
-def create_user(user: UserCreate, session: Session = Depends(get_session)):
+def create_user(body: UserCreate, session: Session = Depends(get_session)):
     """
     Attributes:
     - name (str): The full name of the user. Defaults to 'John Doe'.
     - email (str): The email address of the user. Defaults to 'johndoe@example.com'.
     - password (str): The user's password. This can either be in plaintext or in PHC (Password Hashing Competition) format. Defaults to a pre-defined Argon2id hash.
     """
-    session.add(user)
+    new_user = User(**body.dict())  # Create a User instance from UserCreate data
+    session.add(new_user)
     session.commit()
-    session.refresh(user)
-    return user
+    session.refresh(new_user)
+    return new_user
 
 @router.get("/{uuid}", response_model=UserRead)
-def read_user(uuid: str, session: Session = Depends(get_session)):
+def read_user(uuid: UUID, session: Session = Depends(get_session)):
     user = session.get(User, uuid)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
     return user
 
 @router.put("/{uuid}", response_model=UserRead)
-def replace_user(uuid: str, new_user: UserUpdate, session: Session = Depends(get_session)):
+def replace_user(uuid: UUID, body: UserCreate, session: Session = Depends(get_session)):
     user = session.get(User, uuid)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    new_user.id = uuid  # Ensure the ID remains the same
-    session.delete(user)
-    session.add(new_user)
+    session.delete(user)  # Delete the old user instance
+    user = User(**body.dict())  # Create a new User instance with the new data
+    user.uuid = uuid
+    session.add(user)
     session.commit()
-    session.refresh(new_user)
-    return new_user
+    session.refresh(user)
+    return user
 
-@router.patch("/{uuid}", response_model=User)
-def update_user(uuid: str, updated_user: UserUpdate, session: Session = Depends(get_session)):
+@router.patch("/{uuid}", response_model=UserRead)
+def update_user(uuid: UUID, body: UserUpdate, session: Session = Depends(get_session)):
     user = session.get(User, uuid)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    for key, value in updated_user.dict(exclude_unset=True).items():
+    for key, value in body.dict(exclude_unset=True).items():
         setattr(user, key, value)
     session.add(user)
     session.commit()
     session.refresh(user)
     return user
 
-@router.delete("/{uuid}")
-def soft_delete_user(uuid: str, session: Session = Depends(get_session)):
+@router.delete("/{uuid}", status_code=204)
+def delete_user(uuid: UUID, session: Session = Depends(get_session)):
     user = session.get(User, uuid)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    user.is_deleted = True
-    session.add(user)
+    session.delete(user)
     session.commit()
-    session.refresh(user)
-    return {"message": "User soft deleted"}
+    return

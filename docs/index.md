@@ -46,6 +46,12 @@ source .venv/bin/activate
 
 pip install -r requirements.txt
 
+## Run the API Server
+
+```bash
+fastapi dev main.py
+```
+
 ## 🚧 Roadmap
 
 - Notifications that yell at you.
