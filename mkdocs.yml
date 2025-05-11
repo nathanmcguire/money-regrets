@@ -3,5 +3,4 @@ theme:
   name: material
   custom_dir: docs/overrides
   # - navigation.tabs
-site_dir: money_regrets/docs
 dev_addr: 127.0.0.1:8001
