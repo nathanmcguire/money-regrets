@@ -12,7 +12,7 @@ Welcome to **Money Regrets** – the personal finance app that doesn’t sugarco
 
 ## 🎯 What Is This?
 
-MoneyRegrets is a brutally honest, slightly sarcastic finance tracker designed to highlight your spending *sins*. Think of it as a budgeting app with a passive-aggressive therapist baked in.
+Money Regrets is a brutally honest, slightly sarcastic finance tracker designed to highlight your spending *sins*. Think of it as a budgeting app with a passive-aggressive therapist baked in.
 
 
 ## 📉 Core Features

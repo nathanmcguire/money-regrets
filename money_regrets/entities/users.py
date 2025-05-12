@@ -28,7 +28,6 @@ class User(SQLModel, table=True):
     is_archived: bool = Field(default=False)
     is_deleted: bool = Field(default=False)
 
-
     @classmethod
     def create(cls, session, name: str, email: str, password: str):
         user = cls(name=name, email=email, password=password)
@@ -37,11 +36,9 @@ class User(SQLModel, table=True):
         session.refresh(user)
         return user
 
-
     @classmethod
     def read(cls, session, user_id: UUID):
         return session.get(cls, user_id)
-
 
     @classmethod
     def update(cls, session, user_id: UUID, name: Optional[str] = None, email: Optional[str] = None, password: Optional[str] = None):
@@ -57,7 +54,6 @@ class User(SQLModel, table=True):
             session.refresh(user)
         return user
 
-
     @classmethod
     def set_password(self, password: str):
         """
@@ -71,7 +67,6 @@ class User(SQLModel, table=True):
         else:
             # Hash the plaintext password
             self.password = pwd_context.hash(password)
-
 
     @classmethod
     def verify_password(self, plaintext_password: str) -> bool:
@@ -93,11 +88,10 @@ class UserRead(SQLModel):
     """
     Represents a user read model for retrieving user data.
     """
-    uuid: UUID
-    name: str
-    email: str
-    is_archived: bool
-    is_deleted: bool
+    name: Optional[str] = Field(default="John Doe")
+    email: Optional[str] = Field(default="johndoe@example.com")
+    is_archived: Optional[bool] = Field(default=False)
+    is_deleted: Optional[bool] = Field(default=False)
 
 
 class UserUpdate(SQLModel):
