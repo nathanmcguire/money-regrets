@@ -1,0 +1,85 @@
+@startuml model_diagram
+
+hide circle
+
+entity "Users" as users {
+    +uuid : UUID
+    +name : string
+    +email : string
+    +password : string
+    +is_archived : boolean
+    +is_deleted : boolean
+}
+
+entity "Tenants" as tenants {
+    +id : UUID
+    +name : string
+    +created_at : datetime
+    +updated_at : datetime
+}
+
+entity "Subscriptions" as subscriptions {
+    +id : UUID
+    +tenant_id : UUID
+    +resource_usage : float
+    +billing_cycle : string
+    +amount_due : float
+    +created_at : datetime
+    +updated_at : datetime
+}
+
+entity "OFX_Institutions" as institutions {
+    +id : UUID
+    +org : string
+    +fid : string
+}
+
+entity "OFX_Accounts" as accounts {
+    +id : UUID
+    +account_id : string
+    +bank_id : string
+    +account_type : string
+    +session_id : UUID
+    +institution_id : UUID
+    +created_at : datetime
+    +updated_at : datetime
+}
+
+entity "Payees/Payers" as payees_payers {
+    +id : UUID
+    +name : string
+    +type : string
+    +created_at : datetime
+    +updated_at : datetime
+}
+
+entity "OFX_Transactions" as transactions {
+    +id : UUID
+    +fitid : string
+    +trnamt : decimal
+    +trntype : string
+    +dtposted : datetime
+    +name : string
+    +memo : string
+    +account_id : UUID
+    +session_id : UUID
+    +created_at : datetime
+    +updated_at : datetime
+}
+
+entity "OFX_UserSessions" as user_sessions {
+    +id : UUID
+    +user_id : string
+    +dtserver : datetime
+    +language : string
+    +status_code : integer
+    +severity : string
+    +institution_id : UUID
+}
+
+institutions::id }o--|| user_sessions::institution_id
+user_sessions::id }o--|| accounts::session_id
+accounts::id }o--|| transactions::account_id
+user_sessions::id }o--|| transactions::session_id
+
+@enduml
