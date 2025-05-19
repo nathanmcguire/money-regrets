@@ -1,0 +1,142 @@
+@startuml Relational_Database_Schema
+
+hide circle
+
+entity OFX {
+    + id : UUID [PK]
+    signon_msg_id : UUID [FK]
+    bank_msg_id : UUID [FK]
+    credit_card_msg_id : UUID [FK]
+    investment_msg_id : UUID [FK]
+}
+
+entity SignonMsg {
+    + id : UUID [PK]
+    signon_response_id : UUID [FK]
+}
+
+entity SignonResponse {
+    + id : UUID [PK]
+    status_id : UUID [FK]
+    date : DATETIME
+    language : VARCHAR
+    financial_institution : VARCHAR
+}
+
+entity BankMsg {
+    + id : UUID [PK]
+    bank_statement_response_id : UUID [FK]
+}
+
+entity BankStatementResponse {
+    + id : UUID [PK]
+    status_id : UUID [FK]
+    account_info_id : UUID [FK]
+    transactions_id : UUID [FK]
+}
+
+entity CreditCardMsg {
+    + id : UUID [PK]
+    credit_card_statement_response_id : UUID [FK]
+}
+
+entity CreditCardStatementResponse {
+    + id : UUID [PK]
+    status_id : UUID [FK]
+    account_info_id : UUID [FK]
+    transactions_id : UUID [FK]
+}
+
+entity InvestmentMsg {
+    + id : UUID [PK]
+    investment_statement_response_id : UUID [FK]
+}
+
+entity InvestmentStatementResponse {
+    + id : UUID [PK]
+    status_id : UUID [FK]
+    account_info_id : UUID [FK]
+    holdings_id : UUID [FK]
+    transactions_id : UUID [FK]
+}
+
+entity Status {
+    + id : UUID [PK]
+    code : INT
+    severity : VARCHAR
+    message : TEXT
+}
+
+entity AccountInfo {
+    + id : UUID [PK]
+    account_id : VARCHAR
+    account_type : VARCHAR
+    bank_id : VARCHAR
+}
+
+entity Transactions {
+    + id : UUID [PK]
+    transaction_list_id : UUID [FK]
+}
+
+entity TransactionList {
+    + id : UUID [PK]
+    transaction_id : UUID [FK]
+}
+
+entity Transaction {
+    + id : UUID [PK]
+    date : DATETIME
+    amount : DECIMAL
+    description : TEXT
+    transaction_id : VARCHAR
+}
+
+entity Holdings {
+    + id : UUID [PK]
+    holdings_list_id : UUID [FK]
+}
+
+entity HoldingsList {
+    + id : UUID [PK]
+    holding_id : UUID [FK]
+}
+
+entity Holding {
+    + id : UUID [PK]
+    security_id : VARCHAR
+    quantity : DECIMAL
+    current_value : DECIMAL
+}
+
+OFX ||--o{ SignonMsg
+OFX ||--o{ BankMsg
+OFX ||--o{ CreditCardMsg
+OFX ||--o{ InvestmentMsg
+
+SignonMsg ||--o{ SignonResponse
+BankMsg ||--o{ BankStatementResponse
+CreditCardMsg ||--o{ CreditCardStatementResponse
+InvestmentMsg ||--o{ InvestmentStatementResponse
+
+SignonResponse ||--o{ Status
+BankStatementResponse ||--o{ Status
+CreditCardStatementResponse ||--o{ Status
+InvestmentStatementResponse ||--o{ Status
+
+BankStatementResponse ||--o{ AccountInfo
+CreditCardStatementResponse ||--o{ AccountInfo
+InvestmentStatementResponse ||--o{ AccountInfo
+
+BankStatementResponse ||--o{ Transactions
+CreditCardStatementResponse ||--o{ Transactions
+InvestmentStatementResponse ||--o{ Transactions
+InvestmentStatementResponse ||--o{ Holdings
+
+Transactions ||--o{ TransactionList
+TransactionList ||--o{ Transaction
+
+Holdings ||--o{ HoldingsList
+HoldingsList ||--o{ Holding
+
+@enduml
