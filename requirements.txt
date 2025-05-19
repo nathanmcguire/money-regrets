@@ -8,7 +8,7 @@ mkdocs-material
 mkdocstrings
 mkdocstrings-python
 passlib
-plaid_python
+plaid-python
 plantuml-markdown
 pytest
 pytest-asyncio
@@ -19,4 +19,4 @@ slowapi
 sqlmodel
 typing
 uuid
-uvicorn
+uvicorn[standard]

@@ -12,8 +12,7 @@ load_dotenv()
 
 
 # Get the database URL from the environment
-DATABASE_URL = os.getenv("DATABASE_URL") 
-
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -35,7 +34,7 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 
-from money_regrets.entities import *
+from money_regrets_api.models import *
 target_metadata = SQLModel.metadata
 
 

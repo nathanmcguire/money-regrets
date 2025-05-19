@@ -38,8 +38,6 @@ Money Regrets is a brutally honest, slightly sarcastic finance tracker designed 
 
 ## 📦 Installation
 
-Coming soon...
-
 python3 -m venv .venv
 
 source .venv/bin/activate
