@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlmodel import Session, select
 from uuid import UUID
 from typing import Annotated
-from .models import User, UserCreate, UserRead, UserUpdate
+from .models import User, UserCreate, UserRead, UserUpdate, UsersRead
 from money_regrets_api.database import get_session
 
 logging.basicConfig(level=logging.DEBUG)
@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 users_router = APIRouter(tags=["Users"])
 
-@users_router.get("/", response_model=list[UserRead])
+@users_router.get("/", response_model=list[UsersRead])
 async def get_users(
     session: Session = Depends(get_session),
     offset: Annotated[int, Query(title="Offset", description="Number of records to skip", ge=0)] = 0,

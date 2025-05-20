@@ -88,3 +88,11 @@ class UserUpdate(SQLModel):
     )
     is_archived: Optional[bool] = Field(default=False)
     is_deleted: Optional[bool] = Field(default=False)
+
+
+class UsersRead(SQLModel):
+    uuid: Optional[UUID] = Field(default_factory=lambda: ULID().to_uuid())
+    name: Optional[str] = Field(default="John Doe")
+    email: Optional[str] = Field(default="johndoe@example.com")
+    is_archived: Optional[bool] = Field(default=False)
+    is_deleted: Optional[bool] = Field(default=False)
