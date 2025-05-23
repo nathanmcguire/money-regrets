@@ -1,10 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { getUsers, createUser, updateUser, deleteUser } from './api';
-import Navigation from './Navigation';
+import logo from './logo.svg';
 import ListGroup from './users/ListGroup';
 import Form from './users/Form';
 
+
 function App() {
+  const sidebarRef = useRef(null);
+  const toggleButtonRef = useRef(null);
+
+  useEffect(() => {
+    const toggleButton = toggleButtonRef.current;
+    const sidebar = sidebarRef.current;
+    if (!toggleButton || !sidebar) return;
+
+    const handleToggle = () => {
+      if (window.innerWidth < 768) {
+        sidebar.classList.toggle('show');
+      } else {
+        sidebar.classList.toggle('collapsed');
+      }
+    };
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        sidebar.classList.remove('show');
+      }
+    };
+    toggleButton.addEventListener('click', handleToggle);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      toggleButton.removeEventListener('click', handleToggle);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const [users, setUsers] = useState([]);
   const [form, setForm] = useState({ name: '', email: '', password: '' });
   const [loading, setLoading] = useState(false);
@@ -129,13 +158,38 @@ function App() {
   };
 
   return (
-    <div className="container-fluid">
-      <div className="row min-vh-100">
-        <nav className="col-2 col-md-2 bg-light border-end p-0 d-flex flex-column">
-          <Navigation />
-        </nav>
-        <main className="col-10 col-md-10 row p-0 m-0">
-          <div className="col-4 col-md-4 p-0 border-end bg-light">
+    <div className="d-flex min-vh-100">
+      {/* Sidebar */}
+      <nav
+        id="sidebar"
+        ref={sidebarRef}
+        className="bg-dark text-white p-3"
+        style={{
+          transition: 'all 0.3s ease',
+          minHeight: '100vh',
+          width: 250,
+        }}
+      >
+        <div className="d-flex align-items-center mb-4">
+          <img src={logo} alt="logo" width={32} height={32} className="me-2" />
+          <h4 className="text-white mb-0">Menu</h4>
+        </div>
+        <ul className="nav flex-column">
+          <li className="nav-item"><a className="nav-link text-white" href="#">Dashboard</a></li>
+          <li className="nav-item"><a className="nav-link text-white" href="#">Settings</a></li>
+          <li className="nav-item"><a className="nav-link text-white" href="#">Users</a></li>
+        </ul>
+      </nav>
+      {/* Main Content */}
+      <div className="flex-grow-1 d-flex flex-column">
+        <header className="p-3 bg-light d-flex align-items-center">
+          <button id="menu-toggle" ref={toggleButtonRef} className="btn btn-outline-secondary me-2" type="button">
+            &#9776;
+          </button>
+          <h1 className="h5 mb-0">Page Title</h1>
+        </header>
+        <main className="col-10 col-md-10 p-0 row">
+          <div className="col-4 col-md-4 p-0">
             <ListGroup
               users={users}
               selectedUser={selectedUser}
@@ -149,7 +203,7 @@ function App() {
               onAddUser={handleAddUserClick}
             />
           </div>
-          <div className="col-8 col-md-8 p-0 bg-light">
+          <div className="col-8 col-md-8 p-0">
             <Form
               mode={formMode}
               user={selectedUser}
@@ -167,6 +221,28 @@ function App() {
           </div>
         </main>
       </div>
+      <style>{`
+        #sidebar {
+          transition: all 0.3s ease;
+          min-height: 100vh;
+        }
+        #sidebar.collapsed {
+          width: 60px !important;
+        }
+        #sidebar:not(.collapsed) {
+          width: 250px !important;
+        }
+        @media (max-width: 768px) {
+          #sidebar {
+            position: absolute;
+            left: -250px;
+            z-index: 1050;
+          }
+          #sidebar.show {
+            left: 0;
+          }
+        }
+      `}</style>
     </div>
   );
 }

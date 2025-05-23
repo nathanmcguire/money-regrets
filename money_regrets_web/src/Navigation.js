@@ -1,60 +1,92 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import logo from './logo.svg';
 
-function Navigation() {
+function Navigation({ children }) {
+  const sidebarRef = useRef(null);
+  const toggleButtonRef = useRef(null);
+
+  useEffect(() => {
+    const toggleButton = toggleButtonRef.current;
+    const sidebar = sidebarRef.current;
+    if (!toggleButton || !sidebar) return;
+
+    const handleToggle = () => {
+      if (window.innerWidth < 768) {
+        sidebar.classList.toggle('show');
+      } else {
+        sidebar.classList.toggle('collapsed');
+      }
+    };
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        sidebar.classList.remove('show');
+      }
+    };
+    toggleButton.addEventListener('click', handleToggle);
+    window.addEventListener('resize', handleResize);
+    return () => {
+      toggleButton.removeEventListener('click', handleToggle);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark min-vh-100">
-      <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        <img src={logo} alt="logo" width={40} height={32} className="pe-none me-2" />
-        <span className="fs-4">Money Regrets</span>
-      </a>
-      <hr />
-      <ul className="nav nav-pills flex-column mb-auto">
-        <li className="nav-item">
-          <a href="#" className="nav-link active" aria-current="page">
-            <i className="bi bi-people pe-none me-2" style={{ width: 16, height: 16 }}></i>
-            Users
-          </a>
-        </li>
-        <li>
-          <a href="#" className="nav-link text-white">
-            <i className="bi bi-grid pe-none me-2" style={{ width: 16, height: 16 }}></i>
-            Dashboard
-          </a>
-        </li>
-        <li>
-          <a href="#" className="nav-link text-white">
-            <i className="bi bi-cart pe-none me-2" style={{ width: 16, height: 16 }}></i>
-            Orders
-          </a>
-        </li>
-        <li>
-          <a href="#" className="nav-link text-white">
-            <i className="bi bi-box pe-none me-2" style={{ width: 16, height: 16 }}></i>
-            Products
-          </a>
-        </li>
-        <li>
-          <a href="#" className="nav-link text-white">
-            <i className="bi bi-person pe-none me-2" style={{ width: 16, height: 16 }}></i>
-            Customers
-          </a>
-        </li>
-      </ul>
-      <hr />
-      <div className="dropdown">
-        <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" role="button">
-          <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
-          <strong>mdo</strong>
-        </a>
-        <ul className="dropdown-menu dropdown-menu-dark text-small shadow show-on-hover">
-          <li><a className="dropdown-item" href="#">New project...</a></li>
-          <li><a className="dropdown-item" href="#">Settings</a></li>
-          <li><a className="dropdown-item" href="#">Profile</a></li>
-          <li><hr className="dropdown-divider" /></li>
-          <li><a className="dropdown-item" href="#">Sign out</a></li>
+    <div className="d-flex">
+      {/* Sidebar */}
+      <nav
+        id="sidebar"
+        ref={sidebarRef}
+        className="bg-dark text-white p-3"
+        style={{
+          transition: 'all 0.3s ease',
+          minHeight: '100vh',
+          width: 250,
+        }}
+      >
+        <div className="d-flex align-items-center mb-4">
+          <img src={logo} alt="logo" width={32} height={32} className="me-2" />
+          <h4 className="text-white mb-0">Menu</h4>
+        </div>
+        <ul className="nav flex-column">
+          <li className="nav-item"><a className="nav-link text-white" href="#">Dashboard</a></li>
+          <li className="nav-item"><a className="nav-link text-white" href="#">Settings</a></li>
+          <li className="nav-item"><a className="nav-link text-white" href="#">Users</a></li>
         </ul>
+      </nav>
+      {/* Main Content */}
+      <div className="flex-grow-1">
+        <header className="p-3 bg-light d-flex align-items-center">
+          <button id="menu-toggle" ref={toggleButtonRef} className="btn btn-outline-secondary me-2" type="button">
+            &#9776;
+          </button>
+          <h1 className="h5 mb-0">Page Title</h1>
+        </header>
+        <main className="p-3">
+          {children || <p>Main content goes here.</p>}
+        </main>
       </div>
+      <style>{`
+        #sidebar {
+          transition: all 0.3s ease;
+          min-height: 100vh;
+        }
+        #sidebar.collapsed {
+          width: 60px !important;
+        }
+        #sidebar:not(.collapsed) {
+          width: 250px !important;
+        }
+        @media (max-width: 768px) {
+          #sidebar {
+            position: absolute;
+            left: -250px;
+            z-index: 1050;
+          }
+          #sidebar.show {
+            left: 0;
+          }
+        }
+      `}</style>
     </div>
   );
 }
