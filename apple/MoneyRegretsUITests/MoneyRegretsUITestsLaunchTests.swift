@@ -1,13 +1,13 @@
 //
-//  moneyregretsUITestsLaunchTests.swift
-//  moneyregretsUITests
+//  MoneyRegretsUITestsLaunchTests.swift
+//  MoneyRegretsUITests
 //
 //  Created by Nathan McGuire on 5/22/25.
 //
 
 import XCTest
 
-final class moneyregretsUITestsLaunchTests: XCTestCase {
+final class MoneyRegretsUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

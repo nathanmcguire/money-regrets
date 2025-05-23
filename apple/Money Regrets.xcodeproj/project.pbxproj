@@ -7,62 +7,62 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		D8ED86B02DE02AD400359027 /* PBXContainerItemProxy */ = {
+		D8B259532DE02DBF009E3744 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D8ED86972DE02AD300359027 /* Project object */;
+			containerPortal = D8B2593A2DE02DBE009E3744 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D8ED869E2DE02AD300359027;
-			remoteInfo = moneyregrets;
+			remoteGlobalIDString = D8B259412DE02DBE009E3744;
+			remoteInfo = MoneyRegrets;
 		};
-		D8ED86BA2DE02AD400359027 /* PBXContainerItemProxy */ = {
+		D8B2595D2DE02DBF009E3744 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D8ED86972DE02AD300359027 /* Project object */;
+			containerPortal = D8B2593A2DE02DBE009E3744 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D8ED869E2DE02AD300359027;
-			remoteInfo = moneyregrets;
+			remoteGlobalIDString = D8B259412DE02DBE009E3744;
+			remoteInfo = MoneyRegrets;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D8ED869F2DE02AD300359027 /* moneyregrets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moneyregrets.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8ED86AF2DE02AD400359027 /* moneyregretsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moneyregretsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8ED86B92DE02AD400359027 /* moneyregretsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moneyregretsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B259422DE02DBE009E3744 /* Money Regrets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Regrets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B259522DE02DBF009E3744 /* Money RegretsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Money RegretsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8B2595C2DE02DBF009E3744 /* Money RegretsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Money RegretsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D8ED86A12DE02AD300359027 /* moneyregrets */ = {
+		D8B259442DE02DBE009E3744 /* MoneyRegrets */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = moneyregrets;
+			path = MoneyRegrets;
 			sourceTree = "<group>";
 		};
-		D8ED86B22DE02AD400359027 /* moneyregretsTests */ = {
+		D8B259552DE02DBF009E3744 /* MoneyRegretsTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = moneyregretsTests;
+			path = MoneyRegretsTests;
 			sourceTree = "<group>";
 		};
-		D8ED86BC2DE02AD400359027 /* moneyregretsUITests */ = {
+		D8B2595F2DE02DBF009E3744 /* MoneyRegretsUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = moneyregretsUITests;
+			path = MoneyRegretsUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D8ED869C2DE02AD300359027 /* Frameworks */ = {
+		D8B2593F2DE02DBE009E3744 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8ED86AC2DE02AD400359027 /* Frameworks */ = {
+		D8B2594F2DE02DBF009E3744 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8ED86B62DE02AD400359027 /* Frameworks */ = {
+		D8B259592DE02DBF009E3744 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,22 +72,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D8ED86962DE02AD300359027 = {
+		D8B259392DE02DBE009E3744 = {
 			isa = PBXGroup;
 			children = (
-				D8ED86A12DE02AD300359027 /* moneyregrets */,
-				D8ED86B22DE02AD400359027 /* moneyregretsTests */,
-				D8ED86BC2DE02AD400359027 /* moneyregretsUITests */,
-				D8ED86A02DE02AD300359027 /* Products */,
+				D8B259442DE02DBE009E3744 /* MoneyRegrets */,
+				D8B259552DE02DBF009E3744 /* MoneyRegretsTests */,
+				D8B2595F2DE02DBF009E3744 /* MoneyRegretsUITests */,
+				D8B259432DE02DBE009E3744 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D8ED86A02DE02AD300359027 /* Products */ = {
+		D8B259432DE02DBE009E3744 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8ED869F2DE02AD300359027 /* moneyregrets.app */,
-				D8ED86AF2DE02AD400359027 /* moneyregretsTests.xctest */,
-				D8ED86B92DE02AD400359027 /* moneyregretsUITests.xctest */,
+				D8B259422DE02DBE009E3744 /* Money Regrets.app */,
+				D8B259522DE02DBF009E3744 /* Money RegretsTests.xctest */,
+				D8B2595C2DE02DBF009E3744 /* Money RegretsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,134 +95,134 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D8ED869E2DE02AD300359027 /* moneyregrets */ = {
+		D8B259412DE02DBE009E3744 /* Money Regrets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8ED86C32DE02AD400359027 /* Build configuration list for PBXNativeTarget "moneyregrets" */;
+			buildConfigurationList = D8B259662DE02DBF009E3744 /* Build configuration list for PBXNativeTarget "Money Regrets" */;
 			buildPhases = (
-				D8ED869B2DE02AD300359027 /* Sources */,
-				D8ED869C2DE02AD300359027 /* Frameworks */,
-				D8ED869D2DE02AD300359027 /* Resources */,
+				D8B2593E2DE02DBE009E3744 /* Sources */,
+				D8B2593F2DE02DBE009E3744 /* Frameworks */,
+				D8B259402DE02DBE009E3744 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				D8ED86A12DE02AD300359027 /* moneyregrets */,
+				D8B259442DE02DBE009E3744 /* MoneyRegrets */,
 			);
-			name = moneyregrets;
+			name = "Money Regrets";
 			packageProductDependencies = (
 			);
-			productName = moneyregrets;
-			productReference = D8ED869F2DE02AD300359027 /* moneyregrets.app */;
+			productName = MoneyRegrets;
+			productReference = D8B259422DE02DBE009E3744 /* Money Regrets.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D8ED86AE2DE02AD400359027 /* moneyregretsTests */ = {
+		D8B259512DE02DBF009E3744 /* Money RegretsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8ED86C62DE02AD400359027 /* Build configuration list for PBXNativeTarget "moneyregretsTests" */;
+			buildConfigurationList = D8B259692DE02DBF009E3744 /* Build configuration list for PBXNativeTarget "Money RegretsTests" */;
 			buildPhases = (
-				D8ED86AB2DE02AD400359027 /* Sources */,
-				D8ED86AC2DE02AD400359027 /* Frameworks */,
-				D8ED86AD2DE02AD400359027 /* Resources */,
+				D8B2594E2DE02DBF009E3744 /* Sources */,
+				D8B2594F2DE02DBF009E3744 /* Frameworks */,
+				D8B259502DE02DBF009E3744 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D8ED86B12DE02AD400359027 /* PBXTargetDependency */,
+				D8B259542DE02DBF009E3744 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				D8ED86B22DE02AD400359027 /* moneyregretsTests */,
+				D8B259552DE02DBF009E3744 /* MoneyRegretsTests */,
 			);
-			name = moneyregretsTests;
+			name = "Money RegretsTests";
 			packageProductDependencies = (
 			);
-			productName = moneyregretsTests;
-			productReference = D8ED86AF2DE02AD400359027 /* moneyregretsTests.xctest */;
+			productName = MoneyRegretsTests;
+			productReference = D8B259522DE02DBF009E3744 /* Money RegretsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D8ED86B82DE02AD400359027 /* moneyregretsUITests */ = {
+		D8B2595B2DE02DBF009E3744 /* Money RegretsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8ED86C92DE02AD400359027 /* Build configuration list for PBXNativeTarget "moneyregretsUITests" */;
+			buildConfigurationList = D8B2596C2DE02DBF009E3744 /* Build configuration list for PBXNativeTarget "Money RegretsUITests" */;
 			buildPhases = (
-				D8ED86B52DE02AD400359027 /* Sources */,
-				D8ED86B62DE02AD400359027 /* Frameworks */,
-				D8ED86B72DE02AD400359027 /* Resources */,
+				D8B259582DE02DBF009E3744 /* Sources */,
+				D8B259592DE02DBF009E3744 /* Frameworks */,
+				D8B2595A2DE02DBF009E3744 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D8ED86BB2DE02AD400359027 /* PBXTargetDependency */,
+				D8B2595E2DE02DBF009E3744 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				D8ED86BC2DE02AD400359027 /* moneyregretsUITests */,
+				D8B2595F2DE02DBF009E3744 /* MoneyRegretsUITests */,
 			);
-			name = moneyregretsUITests;
+			name = "Money RegretsUITests";
 			packageProductDependencies = (
 			);
-			productName = moneyregretsUITests;
-			productReference = D8ED86B92DE02AD400359027 /* moneyregretsUITests.xctest */;
+			productName = MoneyRegretsUITests;
+			productReference = D8B2595C2DE02DBF009E3744 /* Money RegretsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D8ED86972DE02AD300359027 /* Project object */ = {
+		D8B2593A2DE02DBE009E3744 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
-					D8ED869E2DE02AD300359027 = {
+					D8B259412DE02DBE009E3744 = {
 						CreatedOnToolsVersion = 16.3;
 					};
-					D8ED86AE2DE02AD400359027 = {
+					D8B259512DE02DBF009E3744 = {
 						CreatedOnToolsVersion = 16.3;
-						TestTargetID = D8ED869E2DE02AD300359027;
+						TestTargetID = D8B259412DE02DBE009E3744;
 					};
-					D8ED86B82DE02AD400359027 = {
+					D8B2595B2DE02DBF009E3744 = {
 						CreatedOnToolsVersion = 16.3;
-						TestTargetID = D8ED869E2DE02AD300359027;
+						TestTargetID = D8B259412DE02DBE009E3744;
 					};
 				};
 			};
-			buildConfigurationList = D8ED869A2DE02AD300359027 /* Build configuration list for PBXProject "moneyregrets" */;
+			buildConfigurationList = D8B2593D2DE02DBE009E3744 /* Build configuration list for PBXProject "Money Regrets" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = D8ED86962DE02AD300359027;
+			mainGroup = D8B259392DE02DBE009E3744;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = D8ED86A02DE02AD300359027 /* Products */;
+			productRefGroup = D8B259432DE02DBE009E3744 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8ED869E2DE02AD300359027 /* moneyregrets */,
-				D8ED86AE2DE02AD400359027 /* moneyregretsTests */,
-				D8ED86B82DE02AD400359027 /* moneyregretsUITests */,
+				D8B259412DE02DBE009E3744 /* Money Regrets */,
+				D8B259512DE02DBF009E3744 /* Money RegretsTests */,
+				D8B2595B2DE02DBF009E3744 /* Money RegretsUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D8ED869D2DE02AD300359027 /* Resources */ = {
+		D8B259402DE02DBE009E3744 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8ED86AD2DE02AD400359027 /* Resources */ = {
+		D8B259502DE02DBF009E3744 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8ED86B72DE02AD400359027 /* Resources */ = {
+		D8B2595A2DE02DBF009E3744 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,21 +232,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D8ED869B2DE02AD300359027 /* Sources */ = {
+		D8B2593E2DE02DBE009E3744 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8ED86AB2DE02AD400359027 /* Sources */ = {
+		D8B2594E2DE02DBF009E3744 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8ED86B52DE02AD400359027 /* Sources */ = {
+		D8B259582DE02DBF009E3744 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,20 +256,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D8ED86B12DE02AD400359027 /* PBXTargetDependency */ = {
+		D8B259542DE02DBF009E3744 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D8ED869E2DE02AD300359027 /* moneyregrets */;
-			targetProxy = D8ED86B02DE02AD400359027 /* PBXContainerItemProxy */;
+			target = D8B259412DE02DBE009E3744 /* Money Regrets */;
+			targetProxy = D8B259532DE02DBF009E3744 /* PBXContainerItemProxy */;
 		};
-		D8ED86BB2DE02AD400359027 /* PBXTargetDependency */ = {
+		D8B2595E2DE02DBF009E3744 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D8ED869E2DE02AD300359027 /* moneyregrets */;
-			targetProxy = D8ED86BA2DE02AD400359027 /* PBXContainerItemProxy */;
+			target = D8B259412DE02DBE009E3744 /* Money Regrets */;
+			targetProxy = D8B2595D2DE02DBF009E3744 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		D8ED86C12DE02AD400359027 /* Debug */ = {
+		D8B259642DE02DBF009E3744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -331,7 +331,7 @@
 			};
 			name = Debug;
 		};
-		D8ED86C22DE02AD400359027 /* Release */ = {
+		D8B259652DE02DBF009E3744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -385,18 +385,20 @@
 			};
 			name = Release;
 		};
-		D8ED86C42DE02AD400359027 /* Debug */ = {
+		D8B259672DE02DBF009E3744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = moneyregrets/moneyregrets.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MoneyRegrets/MoneyRegrets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 899KC88L84;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Money Regrets";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -412,7 +414,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.moneyregrets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moneyregrets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -424,18 +426,20 @@
 			};
 			name = Debug;
 		};
-		D8ED86C52DE02AD400359027 /* Release */ = {
+		D8B259682DE02DBF009E3744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = moneyregrets/moneyregrets.entitlements;
+				CODE_SIGN_ENTITLEMENTS = MoneyRegrets/MoneyRegrets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 899KC88L84;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Money Regrets";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -451,7 +455,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.moneyregrets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moneyregrets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -463,7 +467,7 @@
 			};
 			name = Release;
 		};
-		D8ED86C72DE02AD400359027 /* Debug */ = {
+		D8B2596A2DE02DBF009E3744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -474,19 +478,19 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.moneyregretsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moneyregrets.MoneyRegretsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moneyregrets.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/moneyregrets";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Money Regrets.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Money Regrets";
 				XROS_DEPLOYMENT_TARGET = 2.4;
 			};
 			name = Debug;
 		};
-		D8ED86C82DE02AD400359027 /* Release */ = {
+		D8B2596B2DE02DBF009E3744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -497,19 +501,19 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.moneyregretsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moneyregrets.MoneyRegretsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moneyregrets.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/moneyregrets";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Money Regrets.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Money Regrets";
 				XROS_DEPLOYMENT_TARGET = 2.4;
 			};
 			name = Release;
 		};
-		D8ED86CA2DE02AD400359027 /* Debug */ = {
+		D8B2596D2DE02DBF009E3744 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -519,19 +523,19 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.moneyregretsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moneyregrets.MoneyRegretsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = moneyregrets;
+				TEST_TARGET_NAME = MoneyRegrets;
 				XROS_DEPLOYMENT_TARGET = 2.4;
 			};
 			name = Debug;
 		};
-		D8ED86CB2DE02AD400359027 /* Release */ = {
+		D8B2596E2DE02DBF009E3744 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -541,14 +545,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				MACOSX_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.ncm.moneyregretsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.moneyregrets.MoneyRegretsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_TARGET_NAME = moneyregrets;
+				TEST_TARGET_NAME = MoneyRegrets;
 				XROS_DEPLOYMENT_TARGET = 2.4;
 			};
 			name = Release;
@@ -556,43 +560,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D8ED869A2DE02AD300359027 /* Build configuration list for PBXProject "moneyregrets" */ = {
+		D8B2593D2DE02DBE009E3744 /* Build configuration list for PBXProject "Money Regrets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8ED86C12DE02AD400359027 /* Debug */,
-				D8ED86C22DE02AD400359027 /* Release */,
+				D8B259642DE02DBF009E3744 /* Debug */,
+				D8B259652DE02DBF009E3744 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8ED86C32DE02AD400359027 /* Build configuration list for PBXNativeTarget "moneyregrets" */ = {
+		D8B259662DE02DBF009E3744 /* Build configuration list for PBXNativeTarget "Money Regrets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8ED86C42DE02AD400359027 /* Debug */,
-				D8ED86C52DE02AD400359027 /* Release */,
+				D8B259672DE02DBF009E3744 /* Debug */,
+				D8B259682DE02DBF009E3744 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8ED86C62DE02AD400359027 /* Build configuration list for PBXNativeTarget "moneyregretsTests" */ = {
+		D8B259692DE02DBF009E3744 /* Build configuration list for PBXNativeTarget "Money RegretsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8ED86C72DE02AD400359027 /* Debug */,
-				D8ED86C82DE02AD400359027 /* Release */,
+				D8B2596A2DE02DBF009E3744 /* Debug */,
+				D8B2596B2DE02DBF009E3744 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8ED86C92DE02AD400359027 /* Build configuration list for PBXNativeTarget "moneyregretsUITests" */ = {
+		D8B2596C2DE02DBF009E3744 /* Build configuration list for PBXNativeTarget "Money RegretsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8ED86CA2DE02AD400359027 /* Debug */,
-				D8ED86CB2DE02AD400359027 /* Release */,
+				D8B2596D2DE02DBF009E3744 /* Debug */,
+				D8B2596E2DE02DBF009E3744 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D8ED86972DE02AD300359027 /* Project object */;
+	rootObject = D8B2593A2DE02DBE009E3744 /* Project object */;
 }

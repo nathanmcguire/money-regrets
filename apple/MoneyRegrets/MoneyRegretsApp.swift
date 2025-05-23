@@ -1,6 +1,6 @@
 //
-//  moneyregretsApp.swift
-//  moneyregrets
+//  MoneyRegretsApp.swift
+//  MoneyRegrets
 //
 //  Created by Nathan McGuire on 5/22/25.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct moneyregretsApp: App {
+struct MoneyRegretsApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,

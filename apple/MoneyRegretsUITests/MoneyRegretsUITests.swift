@@ -1,13 +1,13 @@
 //
-//  moneyregretsUITests.swift
-//  moneyregretsUITests
+//  MoneyRegretsUITests.swift
+//  MoneyRegretsUITests
 //
 //  Created by Nathan McGuire on 5/22/25.
 //
 
 import XCTest
 
-final class moneyregretsUITests: XCTestCase {
+final class MoneyRegretsUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
