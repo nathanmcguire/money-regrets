@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 
 users_router = APIRouter(tags=["Users"])
 
+
 @users_router.get("/", response_model=list[UsersRead])
 async def get_users(
     session: Session = Depends(get_session),
@@ -33,6 +34,7 @@ async def get_users(
     users = session.exec(statement).all()
     return users
 
+
 @users_router.post("/", response_model=UserRead)
 def post_user(body: UserCreate, session: Session = Depends(get_session)):
     new_user = User(**body.dict())
@@ -41,6 +43,7 @@ def post_user(body: UserCreate, session: Session = Depends(get_session)):
     session.refresh(new_user)
     return new_user
 
+
 @users_router.get("/{uuid}", response_model=UserRead)
 def get_user(uuid: UUID, session: Session = Depends(get_session)):
     user = session.get(User, uuid)
@@ -48,12 +51,23 @@ def get_user(uuid: UUID, session: Session = Depends(get_session)):
         raise HTTPException(status_code=404, detail="User not found")
     return user
 
+
 @users_router.put("/{uuid}", response_model=UserRead)
 def put_user(
     uuid: UUID,
     body: UserCreate,
     session: Session = Depends(get_session),
-    mode: Annotated[str, Query(title="Mode", description="Mode of operation: 'create' to only create if the user does not exist, 'replace' to delete and recreate if the user exists", regex="^(create|replace)$")] = "create",
+    mode: Annotated[
+        str,
+        Query(
+            title="Mode",
+            description=(
+                "Mode of operation: 'create' to only create if the user does not exist, "
+                "'replace' to delete and recreate if the user exists"
+            ),
+            regex="^(create|replace)$"
+        )
+    ] = "create",
 ):
     user = session.get(User, uuid)
     if mode == "create":
@@ -75,6 +89,7 @@ def put_user(
         session.refresh(user)
         return user
 
+
 @users_router.patch("/{uuid}", response_model=UserRead)
 def patch_user(uuid: UUID, body: UserUpdate, session: Session = Depends(get_session)):
     user = session.get(User, uuid)
@@ -86,6 +101,7 @@ def patch_user(uuid: UUID, body: UserUpdate, session: Session = Depends(get_sess
     session.commit()
     session.refresh(user)
     return user
+
 
 @users_router.delete("/{uuid}", response_model=UserRead, responses={
     200: {"description": "User successfully soft-deleted. Returns the user data.", "model": UserRead},
