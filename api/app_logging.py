@@ -25,3 +25,5 @@ def configure_logging(log_level: str = LogLevels.error):
         return
 
     logging.basicConfig(level=log_level)
+
+# Rename this file from logging.py to app_logging.py
