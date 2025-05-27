@@ -6,7 +6,7 @@
 |---------------------- |------------------------|
 | moneyregrets.com      | Marketing site         |
 | docs.                 | Documentation          |
-| app.                  | Logged-in frontend app |
+| app.                  | Frontend App           |
 | api.                  | Backend API (FastAPI)  |
 | www.                  | Redirects to apex      |
 
