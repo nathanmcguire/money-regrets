@@ -4,7 +4,7 @@ from sqlmodel import Session, select
 from uuid import UUID
 from typing import Annotated
 from .models import User, UserCreate, UserRead, UserUpdate, UsersRead
-from money_regrets_api.database import get_session
+from ..database import get_session
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)

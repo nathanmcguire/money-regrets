@@ -1,13 +1,9 @@
-from typing import Optional
+from typing import Optional, Literal
 from pydantic import BaseModel
 from sqlmodel import SQLModel, Field
 
 
-class PlaidLinkTokenRequest(BaseModel):
-    user_id: str
-
-
-class PlaidLinkTokenResponse(BaseModel):
+class PlaidLinkToken(BaseModel):
     link_token: str
 
 
@@ -27,6 +23,7 @@ class PlaidItem(SQLModel, table=True):
     __tablename__ = "plaid_items"
 
     item_id: str = Field(primary_key=True)
+    access_token: Optional[str] = None  # Store securely, never send to client
     available_products: Optional[str] = None  # Store as comma-separated string or JSON
     billed_products: Optional[str] = None     # Store as comma-separated string or JSON
     error: Optional[str] = None
@@ -61,3 +58,8 @@ class PlaidBalance(SQLModel, table=True):
     available: Optional[str] = None
     current: Optional[str] = None
     limit: Optional[str] = None
+
+
+class PlaidItemPublicToken(BaseModel):
+    public_token: str
+    environment: Literal["sandbox", "production"] = "sandbox"
