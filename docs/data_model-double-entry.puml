@@ -1,0 +1,43 @@
+@startuml
+' Double Entry Bookkeeping Data Model (With Raw Data Ingestion)
+
+entity AggregatedTransaction {
+    * id : UUID
+    * aggregator : String  ' (Plaid, Yodlee, etc.)
+    * aggregator_transaction_id : String
+    * date : Date
+    * amount : Decimal
+    * description : String
+    * account_name : String
+    * category : String
+    * raw_data : JSON
+}
+
+entity LedgerAccount {
+    * id : UUID
+    * name : String
+    * type : String  ' (Asset, Liability, Equity, Revenue, Expense)
+    * description : String
+}
+
+entity JournalEntry {
+    * id : UUID
+    * date : Date
+    * description : String
+    * reference : String
+    * aggregated_transaction_id : UUID
+}
+
+entity JournalEntryLine {
+    * id : UUID
+    * journal_entry_id : UUID
+    * ledger_account_id : UUID
+    * amount : Decimal  ' Positive for debit, negative for credit (or use type field)
+    * type : String  ' (Debit, Credit)
+    * memo : String
+}
+
+AggregatedTransaction ||--o{ JournalEntry : maps_to
+JournalEntry ||--o{ JournalEntryLine : records
+LedgerAccount ||--o{ JournalEntryLine : includes
+@enduml
