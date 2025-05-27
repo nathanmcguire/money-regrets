@@ -3,6 +3,7 @@ black
 fastapi
 fastapi[standard]
 httpx
+jose
 mkdocs
 mkdocs-material
 mkdocstrings
@@ -13,6 +14,7 @@ plantuml-markdown
 pytest
 pytest-asyncio
 python-dotenv
+python-jose[cryptography]
 python-ulid
 ruff
 slowapi
